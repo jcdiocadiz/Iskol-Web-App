@@ -27,7 +27,7 @@ const SectionsFilter = () => {
   let content: JSX.Element[] = [];
   content.push(
     <div>
-      <div className="row">
+      <div className="row filter-row">
         <div className="col-4 col-s-4">
           <CustomTextbox
             placeholder={"section name"}

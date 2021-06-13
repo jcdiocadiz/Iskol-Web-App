@@ -109,7 +109,9 @@ const CustomPeoplePicker = (props: peoplePickerProps) => {
 
   return (
     <div>
-      <Label tabIndex={props.tabIndex}>{props.label}</Label>
+      <Label tabIndex={props.tabIndex} className={"filter-component-style"}>
+        {props.label}
+      </Label>
       <NormalPeoplePicker
         // eslint-disable-next-line react/jsx-no-bind
         onResolveSuggestions={onFilterChanged}

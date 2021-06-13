@@ -35,7 +35,9 @@ const getDataSource = (props: dropdownDatasource) => {
 export const CustomDropdown = (props: dropdownProps) => {
   return (
     <>
-      <Label tabIndex={props.tabIndex}>{props.label}</Label>
+      <Label tabIndex={props.tabIndex} className={"filter-component-style"}>
+        {props.label}
+      </Label>
       <Dropdown
         selectedKey={props.value}
         options={getDataSource(props.datasource)}

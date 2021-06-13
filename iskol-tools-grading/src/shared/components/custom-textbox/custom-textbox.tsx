@@ -14,7 +14,9 @@ type textboxProps = {
 const CustomTextbox = (props: textboxProps) => {
   return (
     <>
-      <Label tabIndex={props.tabIndex}>{props.label}</Label>
+      <Label tabIndex={props.tabIndex} className={"filter-component-style"}>
+        {props.label}
+      </Label>
       <TextField
         placeholder={props.placeholder}
         tabIndex={props.tabIndex}
