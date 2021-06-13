@@ -33,7 +33,12 @@ const App = () => {
           applyTo={"body"}
           theme={theme ?? GetObjectFromLocalStorage(LocalStorageTheme)}
         >
-          <Header onThemeChange={onThemeChange} />
+          <Header
+            onThemeChange={onThemeChange}
+            onLogoClick={(headerName: string) => {
+              setHeaderName(headerName);
+            }}
+          />
           <PageHeader headerName={headerName}></PageHeader>
           <div className="row">
             <div className="col-2 col-s-2 menu">

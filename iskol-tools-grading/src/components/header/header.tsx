@@ -5,6 +5,7 @@ import { IconButton } from "@fluentui/react/lib/Button";
 import { useHistory } from "react-router";
 type headerProps = {
   onThemeChange: () => void;
+  onLogoClick: (title: string) => void;
 };
 export const Header = (props: headerProps) => {
   const history = useHistory();
@@ -14,6 +15,7 @@ export const Header = (props: headerProps) => {
         className={"logo"}
         onClick={() => {
           history.push("/");
+          props.onLogoClick("Adviser - Dashboard");
         }}
       >
         <Icon
@@ -24,7 +26,6 @@ export const Header = (props: headerProps) => {
         ISKOL
       </span>
       <div className="header-right">
-        {" "}
         <IconButton
           iconProps={{ iconName: "Signin" }}
           title="Sign In"
