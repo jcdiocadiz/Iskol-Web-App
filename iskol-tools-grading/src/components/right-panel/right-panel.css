@@ -1,0 +1,27 @@
+.right-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 20px;
+  border-left: thin solid;
+  height: 100%;
+}
+.right-panel-content {
+  margin: 10px;
+  padding-left: 38px;
+  padding-top: 10px;
+  line-height: 40px;
+  height: 100%;
+}
+.right-panel-header {
+  font-size: medium;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px;
+}
+
+.right-panel-header-label {
+  padding-left: 20px;
+}
+.right-item {
+  font-weight: 800;
+}

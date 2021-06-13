@@ -1,0 +1,36 @@
+.header {
+  overflow: hidden;
+  background-color: inherit;
+}
+
+.header a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.header .logo {
+  font-size: 30px !important;
+  font-weight: bold !important;
+  color: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}

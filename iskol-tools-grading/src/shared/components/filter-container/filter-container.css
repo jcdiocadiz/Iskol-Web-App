@@ -1,0 +1,25 @@
+.filter-container {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  border-bottom: solid thin;
+  padding-bottom: 10px;
+}
+
+.filter-header {
+  font-size: medium;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+.filter-buttons {
+  padding: 8px;
+  float: right;
+}
+.buttons {
+  margin-left: 20px;
+}
+.collapse-style {
+  float: right;
+  font-weight: 500;
+  cursor: pointer;
+}
