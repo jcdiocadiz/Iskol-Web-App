@@ -1,5 +1,4 @@
 import { Dropdown, IDropdownOption, Label } from "@fluentui/react";
-import "../../styles/filter-component.css";
 import {
   schoolYearOptions,
   gradeLevelOptions,
@@ -12,10 +11,11 @@ export enum dropdownDatasource {
   Status,
 }
 type dropdownProps = {
+  className?: string;
   label?: string;
   placeholder?: string;
   tabIndex?: number;
-  datasource: dropdownDatasource;
+  dataSource: dropdownDatasource;
   icon?: string;
   value?: string | number;
   onChange?: (
@@ -35,16 +35,16 @@ const getDataSource = (props: dropdownDatasource) => {
 export const CustomDropdown = (props: dropdownProps) => {
   return (
     <>
-      <Label tabIndex={props.tabIndex} className={"filter-component-style"}>
+      <Label tabIndex={props.tabIndex} className={props.className}>
         {props.label}
       </Label>
       <Dropdown
         selectedKey={props.value}
-        options={getDataSource(props.datasource)}
+        options={getDataSource(props.dataSource)}
         onChange={props.onChange}
         tabIndex={props.tabIndex}
+        className={props.className}
         placeholder={props.placeholder}
-        className={"filter-component-style"}
       />
     </>
   );

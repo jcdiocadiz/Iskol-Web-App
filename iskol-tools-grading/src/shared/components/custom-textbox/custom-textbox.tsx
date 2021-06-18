@@ -1,6 +1,7 @@
 import { Label, TextField } from "@fluentui/react";
 import "../../styles/filter-component.css";
 type textboxProps = {
+  className?: string;
   label?: string;
   placeholder?: string;
   tabIndex?: number;
@@ -14,7 +15,7 @@ type textboxProps = {
 const CustomTextbox = (props: textboxProps) => {
   return (
     <>
-      <Label tabIndex={props.tabIndex} className={"filter-component-style"}>
+      <Label tabIndex={props.tabIndex} className={props.className}>
         {props.label}
       </Label>
       <TextField
@@ -22,7 +23,7 @@ const CustomTextbox = (props: textboxProps) => {
         tabIndex={props.tabIndex}
         iconProps={{ iconName: props.icon }}
         value={props.value}
-        className={"filter-component-style"}
+        className={props.className}
         onChange={props.onChange}
       ></TextField>
     </>
