@@ -15,6 +15,7 @@ const navStyles: Partial<INavStyles> = {
     boxSizing: "border-box",
     border: "1px solid #eee",
     overflowY: "auto",
+    height: "100vh",
   },
 };
 
