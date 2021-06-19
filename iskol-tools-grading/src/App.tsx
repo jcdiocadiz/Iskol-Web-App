@@ -15,6 +15,7 @@ InitializeApp();
 const App = () => {
   const [theme, setTheme] = useState();
   const [headerName, setHeaderName] = useState("Dashboard");
+  const [headerId, setHeaderId] = useState("none");
   const [currentThemeChanged, setCurrentThemChanged] = useState(false);
   useEffect(() => {
     setTheme(GetObjectFromLocalStorage(LocalStorageTheme));
@@ -25,6 +26,7 @@ const App = () => {
 
   const onMenuClick = (linkDetails: ILinkDetails) => {
     setHeaderName(linkDetails.headerName);
+    setHeaderId(linkDetails.id);
   };
   return (
     <div>
@@ -39,12 +41,12 @@ const App = () => {
               setHeaderName(headerName);
             }}
           />
-          <PageHeader headerName={headerName}></PageHeader>
           <div className="row">
             <div className="col-2 col-s-2 menu">
               <Menu onMenuClick={onMenuClick} />
             </div>
             <div className={"col-8 col-s-7"}>
+              <PageHeader headerName={headerName} id={headerId}></PageHeader>
               <Main />
             </div>
             <div className={"col-2 col-s-12"}>

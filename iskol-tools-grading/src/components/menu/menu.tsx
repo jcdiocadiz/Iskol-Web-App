@@ -21,6 +21,7 @@ const navStyles: Partial<INavStyles> = {
 export interface ILinkDetails {
   headerName: string;
   url: string;
+  id: string;
 }
 type menuProps = {
   onMenuClick: (link: ILinkDetails) => void;
@@ -36,6 +37,7 @@ const Menu = (props: menuProps) => {
     let linkDetails: ILinkDetails = {
       headerName: item?.title ?? "",
       url: item?.url ?? "",
+      id: urlNew ?? "",
     };
     props.onMenuClick(linkDetails);
   };
