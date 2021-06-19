@@ -2,7 +2,7 @@
   position: relative;
   height: auto;
   overflow: hidden;
-  border-bottom: solid thin;
+  border-bottom: solid thin #c8c6c4;
   padding-bottom: 10px;
 }
 

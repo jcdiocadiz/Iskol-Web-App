@@ -1,11 +1,12 @@
 import CustomTextbox from "../../../shared/components/custom-textbox/custom-textbox";
 import CustomComboBox, {
+  updateSelectedKeyState,
   customComboBoxDataSource,
 } from "../../../shared/components/custom-combobox/custom-combobox";
 import FilterContainer from "../../../shared/components/filter-container/filter-container";
 import "../../../App.css";
 import "../../../shared/styles/filter-component.css";
-import { IDropdownOption, IPersonaProps } from "@fluentui/react";
+import { IPersonaProps } from "@fluentui/react";
 import React, { useState } from "react";
 import CustomPeoplePicker from "../../../shared/components/custom-people-picker/custom-people-picker";
 const SectionsFilter = () => {
@@ -25,18 +26,7 @@ const SectionsFilter = () => {
     setsectionName("");
   };
   let content: JSX.Element[] = [];
-  const onCustomDropdownChange =
-    (setObjectState: (value: React.SetStateAction<string[]>) => void) =>
-    (event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption) => {
-      if (option !== undefined && option?.key !== undefined)
-        setObjectState((prevSelectedKeys: any) => {
-          debugger;
-          var options: string[] = option?.selected
-            ? [...prevSelectedKeys, option.key]
-            : prevSelectedKeys.filter((c: any) => c !== option!.key);
-          return options;
-        });
-    };
+
   content.push(
     <div>
       <div className="row filter-row">
@@ -61,7 +51,7 @@ const SectionsFilter = () => {
             placeholder={"School Year"}
             label={"School Year"}
             className={"filter-component-style"}
-            onChange={onCustomDropdownChange(setschoolYear)}
+            onChange={updateSelectedKeyState(setschoolYear)}
           />
         </div>
         <div className="col-4 col-s-4">
@@ -71,7 +61,7 @@ const SectionsFilter = () => {
             placeholder={"Status"}
             className={"filter-component-style"}
             label={"Status"}
-            onChange={onCustomDropdownChange(setSectionStatuses)}
+            onChange={updateSelectedKeyState(setSectionStatuses)}
           />
         </div>
       </div>
@@ -84,7 +74,7 @@ const SectionsFilter = () => {
             placeholder={"Grade Level"}
             className={"filter-component-style"}
             label={"Grade Level"}
-            onChange={onCustomDropdownChange(setgradeLevel)}
+            onChange={updateSelectedKeyState(setgradeLevel)}
           />
         </div>
         <div className="col-4 col-s-4">

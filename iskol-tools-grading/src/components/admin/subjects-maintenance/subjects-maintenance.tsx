@@ -1,3 +1,3 @@
 export const SubjectsMaintenance = () => {
-  return <div>Subjects Maintenance</div>;
+  return <div id={"SubjectsMaintenance"}>Subjects Maintenance</div>;
 };

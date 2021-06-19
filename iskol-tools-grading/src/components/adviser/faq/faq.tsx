@@ -1,3 +1,3 @@
 export const Faq = () => {
-  return <div>FAQ</div>;
+  return <div id={"FAQ"}>FAQ</div>;
 };

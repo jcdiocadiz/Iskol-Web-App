@@ -35,9 +35,19 @@ const getDataSource = (props: customComboBoxDataSource) => {
     ? gradeLevelOptions
     : sectionStatusOptions;
 };
+export const updateSelectedKeyState =
+  (setObjectState: (value: React.SetStateAction<string[]>) => void) =>
+  (event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption) => {
+    if (option !== undefined && option?.key !== undefined)
+      setObjectState((prevSelectedKeys: any) => {
+        var options: string[] = option?.selected
+          ? [...prevSelectedKeys, option.key]
+          : prevSelectedKeys.filter((c: any) => c !== option!.key);
+        return options;
+      });
+  };
 
 const CustomComboBox = (props: customComboBoxProps) => {
-  debugger;
   return (
     <>
       <Label tabIndex={props.tabIndex} className={props.className}>

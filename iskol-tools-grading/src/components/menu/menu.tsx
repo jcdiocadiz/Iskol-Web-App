@@ -31,7 +31,8 @@ const Menu = (props: menuProps) => {
 
   const handleClick = (ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => {
     setselectedKey(item?.key ?? "");
-    history.push(item?.url ?? "");
+    let urlNew = item?.url.substring(1);
+    history.push(urlNew ?? "");
     let linkDetails: ILinkDetails = {
       headerName: item?.title ?? "",
       url: item?.url ?? "",

@@ -1,3 +1,3 @@
 export const Report = () => {
-  return <div>Report</div>;
+  return <div id={"Report"}>Report</div>;
 };

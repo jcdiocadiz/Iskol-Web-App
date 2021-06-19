@@ -1,8 +1,7 @@
 .right-container {
-  margin-right: 10px;
+  padding-right: 10px;
   padding-top: 20px;
-  border-left: thin solid;
-  border-top: thin solid;
+  border: thin solid #c8c6c4;
   height: 100%;
 }
 .right-panel-content {
