@@ -38,6 +38,7 @@ export const Theming = (props: themingProps) => {
     { key: "HighContrastTheme", text: "High Contrast" },
     { key: "MSWordTheme", text: "MS Word Theme" },
     { key: "PowerpointTheme", text: "Powerpoint Theme" },
+    { key: "MSTeamsTheme", text: "MS Teams Theme" },
     { key: "PurpleTheme", text: "Purple Theme" },
     { key: "BlackYellowTheme", text: "Black Yellow Theme" },
   ];
