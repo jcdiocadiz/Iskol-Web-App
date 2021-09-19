@@ -59,7 +59,7 @@ export const navLinkGroups: INavLinkGroup[] = [
         key: "SectionsMaintenanceItem",
         name: "Sections Maintenance",
         title: "Admin - Sections Maintenance",
-        url: "#/SectionsMaintenance#SectionsMaintenance",
+        url: "#/SectionsMaintenance",
       },
       {
         key: "SubjectsMaintenanceItem",
