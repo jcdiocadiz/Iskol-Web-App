@@ -19,9 +19,7 @@ const App = () => {
   const [headerId, setHeaderId] = useState("none");
   const [currentThemeChanged, setCurrentThemChanged] = useState(false);
   const history = useHistory();
-
   useEffect(() => {
-    history.push("/");
     setTheme(GetObjectFromLocalStorage(LocalStorageTheme));
   }, [currentThemeChanged]);
   const onThemeChange = () => {

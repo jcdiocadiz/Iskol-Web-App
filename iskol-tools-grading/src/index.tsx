@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 initializeIcons();
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter forceRefresh={false}>
+    <BrowserRouter forceRefresh={true}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
