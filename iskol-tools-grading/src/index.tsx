@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import { initializeIcons } from "@fluentui/font-icons-mdl2";
 import { BrowserRouter } from "react-router-dom";
+import "./web.config";
 initializeIcons();
 ReactDOM.render(
   <React.StrictMode>
