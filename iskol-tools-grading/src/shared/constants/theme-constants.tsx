@@ -6,6 +6,7 @@ export enum ThemeConstants {
   PowerpointTheme,
   PurpleTheme,
   BlackYellowTheme,
+  MSTeamsTheme,
 }
 
 export const LocalStorageTheme = "LocalStorageTheme";

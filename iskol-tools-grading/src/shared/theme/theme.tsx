@@ -183,3 +183,30 @@ export const BlackYellowTheme = {
     white: "#16170a",
   },
 };
+
+export const MSTeamsTheme = {
+  palette: {
+    themePrimary: "#6264a7",
+    themeLighterAlt: "#f7f7fb",
+    themeLighter: "#e1e1f1",
+    themeLight: "#c8c9e4",
+    themeTertiary: "#989ac9",
+    themeSecondary: "#7173b0",
+    themeDarkAlt: "#585a95",
+    themeDark: "#4a4c7e",
+    themeDarker: "#37385d",
+    neutralLighterAlt: "#f3f2f1",
+    neutralLighter: "#efeeed",
+    neutralLight: "#e5e4e3",
+    neutralQuaternaryAlt: "#d6d5d4",
+    neutralQuaternary: "#cccbca",
+    neutralTertiaryAlt: "#c4c3c2",
+    neutralTertiary: "#b6b7c9",
+    neutralSecondary: "#777992",
+    neutralPrimaryAlt: "#464760",
+    neutralPrimary: "#33344a",
+    neutralDark: "#272838",
+    black: "#1d1d29",
+    white: "#faf9f8",
+  },
+};

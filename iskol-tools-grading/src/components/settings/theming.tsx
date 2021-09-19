@@ -15,6 +15,7 @@ import {
   PowerpointTheme,
   PurpleTheme,
   BlackYellowTheme,
+  MSTeamsTheme,
 } from "../../shared/theme/theme";
 import {
   ThemeConstants,
@@ -78,6 +79,8 @@ export const Theming = (props: themingProps) => {
         ? PurpleTheme
         : selectedTheme.key === ThemeConstants[ThemeConstants.BlackYellowTheme]
         ? BlackYellowTheme
+        : selectedTheme.key === ThemeConstants[ThemeConstants.MSTeamsTheme]
+        ? MSTeamsTheme
         : HighContrastTheme;
     return theme;
   };
