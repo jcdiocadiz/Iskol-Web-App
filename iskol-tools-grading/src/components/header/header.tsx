@@ -23,7 +23,7 @@ export const Header = (props: headerProps) => {
           iconName={"Education"}
           title="ISKOL"
         ></Icon>
-        ISKOL
+        ISKOL 1.0
       </span>
       <div className="header-right">
         <IconButton
