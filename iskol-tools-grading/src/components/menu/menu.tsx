@@ -1,12 +1,6 @@
 import "./menu.css";
-import {
-  Nav,
-  INavLinkGroup,
-  INavLink,
-  INavStyles,
-} from "@fluentui/react/lib/Nav";
+import { Nav, INavLink, INavStyles } from "@fluentui/react/lib/Nav";
 import { useHistory } from "react-router";
-import { withRouter } from "react-router-dom";
 import { useState } from "react";
 import { navLinkGroups } from "./menu-items";
 
@@ -30,7 +24,6 @@ type menuProps = {
 const Menu = (props: menuProps) => {
   const history = useHistory();
   const [selectedKey, setselectedKey] = useState("DashboardItem");
-
   const handleClick = (ev?: React.MouseEvent<HTMLElement>, item?: INavLink) => {
     setselectedKey(item?.key ?? "");
     let urlNew = item?.url.substring(1);

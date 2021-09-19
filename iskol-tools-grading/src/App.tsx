@@ -11,13 +11,16 @@ import React, { useEffect, useState } from "react";
 import { InitializeApp } from "./processes/initialize-app";
 import Main from "./components/main/main";
 import { PageHeader } from "./shared/components/page-header/page-header";
+import { useHistory } from "react-router";
 InitializeApp();
 const App = () => {
   const [theme, setTheme] = useState();
   const [headerName, setHeaderName] = useState("Dashboard");
   const [headerId, setHeaderId] = useState("none");
   const [currentThemeChanged, setCurrentThemChanged] = useState(false);
+  const history = useHistory();
   useEffect(() => {
+    history.push("/");
     setTheme(GetObjectFromLocalStorage(LocalStorageTheme));
   }, [currentThemeChanged]);
   const onThemeChange = () => {
