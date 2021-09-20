@@ -14,6 +14,7 @@ type peoplePickerProps = {
   icon?: string;
   selectedItems?: IPersonaProps[];
   onChange?: (items?: IPersonaProps[]) => void;
+  isPeoplePickerDisabled?: boolean | undefined;
 };
 const suggestionProps: IBasePickerSuggestionsProps = {
   suggestionsHeaderText: "Suggested People",
@@ -33,7 +34,6 @@ const checkboxStyles = {
 
 const CustomPeoplePicker = (props: peoplePickerProps) => {
   const [delayResults, setDelayResults] = React.useState(false);
-  const [isPickerDisabled, setIsPickerDisabled] = React.useState(false);
   const [mostRecentlyUsed, setMostRecentlyUsed] =
     React.useState<IPersonaProps[]>(mru);
   const [peopleList, setPeopleList] = React.useState<IPersonaProps[]>(people);
@@ -99,14 +99,6 @@ const CustomPeoplePicker = (props: peoplePickerProps) => {
     }
   };
 
-  const onDisabledButtonClick = (): void => {
-    setIsPickerDisabled(!isPickerDisabled);
-  };
-
-  const onToggleDelayResultsChange = (): void => {
-    setDelayResults(!delayResults);
-  };
-
   return (
     <div>
       <Label tabIndex={props.tabIndex} className={"filter-component-style"}>
@@ -136,7 +128,7 @@ const CustomPeoplePicker = (props: peoplePickerProps) => {
         componentRef={picker}
         onInputChange={onInputChange}
         resolveDelay={300}
-        disabled={isPickerDisabled}
+        disabled={props.isPeoplePickerDisabled}
         onChange={props.onChange}
         selectedItems={props.selectedItems}
       />
