@@ -1,21 +1,49 @@
 import CustomTextbox from "../../../shared/components/custom-textbox/custom-textbox";
 import { useState } from "react";
-import { IPersonaProps } from "@fluentui/react";
+import { useBoolean } from "@fluentui/react-hooks";
+import { IDropdownOption, IPersonaProps } from "@fluentui/react";
 import CustomPeoplePicker from "../../../shared/components/custom-people-picker/custom-people-picker";
 import {
   CustomDropdown,
   dropdownDatasource,
 } from "../../../shared/components/custom-dropdown/custom-dropdown";
-
-export const AddNewSection = (): JSX.Element[] => {
+import { AddEditButtons } from "../../../shared/components/add-edit-buttons/add-edit-buttons";
+import { AddEditForm } from "../../../shared/components/add-edit-form/add-edit-form";
+type AddNewSectionProps = {
+  isModalOpen: boolean;
+  onAddNewSection: () => void;
+  onHideModal: () => void;
+};
+export const AddNewSection = (props: AddNewSectionProps) => {
+  /**Add Section */
   const [schoolYear, setschoolYear] = useState<string>();
   const [gradeLevel, setgradeLevel] = useState<string>();
-  const [sectionStatuses, setSectionStatuses] = useState<string>();
+  const [sectionStatus, setSectionStatus] = useState<string>();
   const [personas, setpersonas] = useState<IPersonaProps[]>();
   const [sectionName, setsectionName] = useState<string>();
   const [isPeoplePickerDisabled, setIsPeoplePickerDisabled] =
     useState<boolean>();
   const content: JSX.Element[] = [];
+  /**Events */
+  const onCancelAddSection = () => {
+    alert("Cancel");
+    props.onHideModal();
+  };
+
+  const onSaveNewSection = () => {
+    alert(
+      "Save the ff: Section name - " +
+        sectionName +
+        ", school year - " +
+        schoolYear +
+        ", grade level - " +
+        gradeLevel +
+        ", section status - " +
+        sectionStatus
+    );
+    props.onHideModal();
+  };
+
   content.push(
     <div>
       <div className="row filter-row">
@@ -40,15 +68,27 @@ export const AddNewSection = (): JSX.Element[] => {
             placeholder={"School Year"}
             label={"School Year"}
             className={"filter-component-style"}
+            onChange={(
+              event: React.FormEvent<HTMLDivElement>,
+              option?: IDropdownOption
+            ) => {
+              setschoolYear(option?.text ?? "");
+            }}
           />
         </div>
         <div className="col-4 col-s-4">
           <CustomDropdown
-            value={sectionStatuses}
+            value={sectionStatus}
             dataSource={dropdownDatasource.Status}
             placeholder={"Status"}
             className={"filter-component-style"}
             label={"Status"}
+            onChange={(
+              event: React.FormEvent<HTMLDivElement>,
+              option?: IDropdownOption
+            ) => {
+              setSectionStatus(option?.text ?? "");
+            }}
           />
         </div>
       </div>
@@ -61,6 +101,12 @@ export const AddNewSection = (): JSX.Element[] => {
             placeholder={"Grade Level"}
             className={"filter-component-style"}
             label={"Grade Level"}
+            onChange={(
+              event: React.FormEvent<HTMLDivElement>,
+              option?: IDropdownOption
+            ) => {
+              setgradeLevel(option?.text ?? "");
+            }}
           />
         </div>
         <div className="col-4 col-s-4">
@@ -74,8 +120,21 @@ export const AddNewSection = (): JSX.Element[] => {
             }}
           />
         </div>
+        <AddEditButtons
+          onSaveOrUpdate={onSaveNewSection}
+          onCancel={onCancelAddSection}
+        ></AddEditButtons>
       </div>
     </div>
   );
-  return content;
+  return (
+    <div>
+      <AddEditForm
+        isModalOpen={props.isModalOpen}
+        onHideModal={props.onHideModal}
+        headerName={"Add New Section"}
+        formContent={content}
+      ></AddEditForm>
+    </div>
+  );
 };

@@ -23,8 +23,6 @@ import {
 type AddEditFormProps = {
   formContent?: JSX.Element[];
   onHideModal?: () => void;
-  onSaveOrUpdate?: () => void;
-  onCancel?: () => void;
   isLoading?: boolean;
   tabIndex?: number;
   disabled?: boolean;
@@ -32,7 +30,6 @@ type AddEditFormProps = {
   isModalOpen?: boolean;
   containerClassName?: string;
   headerName?: string;
-  isEdit?: boolean;
 };
 const cancelIcon: IIconProps = { iconName: "Cancel" };
 const theme = getTheme();
@@ -46,8 +43,7 @@ const contentStyles = mergeStyleSets({
     theme.fonts.xLargePlus,
     {
       flex: "1 1 auto",
-      borderTop: `4px solid ${theme.palette.themePrimary}`,
-      color: theme.palette.neutralPrimary,
+      borderTop: `4px solid`,
       display: "flex",
       alignItems: "center",
       fontWeight: FontWeights.semibold,
@@ -103,11 +99,6 @@ export const AddEditForm = (props: AddEditFormProps) => {
         {/* Content of the Edit Form */}
         {props.formContent ?? <>No content</>}
       </div>
-      <AddEditButtons
-        onSaveOrUpdate={props.onSaveOrUpdate}
-        isEdit={props.isEdit}
-        onCancel={props.onCancel}
-      ></AddEditButtons>
     </Modal>
   );
 };
