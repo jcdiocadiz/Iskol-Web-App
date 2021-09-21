@@ -2,3 +2,10 @@
   width: 100%;
   height: fit-content;
 }
+.buttons-container {
+  margin: 35px;
+  float: right;
+}
+.buttons {
+  cursor: pointer;
+}

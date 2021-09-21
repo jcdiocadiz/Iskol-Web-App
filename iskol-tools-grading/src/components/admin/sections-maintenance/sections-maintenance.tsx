@@ -1,5 +1,5 @@
 import "../../../shared/styles/content-page.css";
-import { SectionCommandArea } from "./section-command-area";
+import { SectionCommandArea } from "./sections-command-area";
 import SectionsFilter from "./sections-filter";
 import SectionsGridview from "./sections-gridview";
 export const SectionsMaintenance = () => {

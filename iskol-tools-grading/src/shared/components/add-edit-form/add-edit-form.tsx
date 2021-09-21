@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useId, useBoolean } from "@fluentui/react-hooks";
+import { AddEditButtons } from "../add-edit-buttons/add-edit-buttons";
 import "./add-edit-form.css";
 import {
   getTheme,
@@ -17,12 +18,13 @@ import {
   DefaultButton,
   IconButton,
   IButtonStyles,
+  PrimaryButton,
 } from "@fluentui/react/lib/Button";
 type AddEditFormProps = {
   formContent?: JSX.Element[];
-  onAddRecord?: () => void;
-  onEditRecord?: () => void;
   onHideModal?: () => void;
+  onSaveOrUpdate?: () => void;
+  onCancel?: () => void;
   isLoading?: boolean;
   tabIndex?: number;
   disabled?: boolean;
@@ -30,6 +32,7 @@ type AddEditFormProps = {
   isModalOpen?: boolean;
   containerClassName?: string;
   headerName?: string;
+  isEdit?: boolean;
 };
 const cancelIcon: IIconProps = { iconName: "Cancel" };
 const theme = getTheme();
@@ -100,6 +103,11 @@ export const AddEditForm = (props: AddEditFormProps) => {
         {/* Content of the Edit Form */}
         {props.formContent ?? <>No content</>}
       </div>
+      <AddEditButtons
+        onSaveOrUpdate={props.onSaveOrUpdate}
+        isEdit={props.isEdit}
+        onCancel={props.onCancel}
+      ></AddEditButtons>
     </Modal>
   );
 };

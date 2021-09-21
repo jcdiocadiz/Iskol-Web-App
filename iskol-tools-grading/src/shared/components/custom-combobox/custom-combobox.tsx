@@ -26,6 +26,7 @@ type customComboBoxProps = {
   selectedKeys: string[] | number[] | null;
   tabIndex?: number;
   placeholder?: string;
+  multiSelect?: boolean;
 };
 
 const getDataSource = (props: customComboBoxDataSource) => {
