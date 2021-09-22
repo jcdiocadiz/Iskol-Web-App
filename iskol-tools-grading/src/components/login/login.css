@@ -1,0 +1,28 @@
+.login-form {
+  width: 40%;
+  max-width: 300px;
+  min-width: 300px;
+  height: 70%;
+  min-height: 400px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin: -0 0px 0 -150px;
+}
+.header-logo {
+  margin: auto;
+  display: block;
+  width: 40%;
+  padding-bottom: 50px;
+}
+.login-buttons {
+  padding-left: 50px;
+  padding-top: 30px;
+  display: inline-flex;
+}
+.sign-up {
+  padding-left: 50px;
+}
+.sign-up:hover {
+  font-weight: bold;
+}

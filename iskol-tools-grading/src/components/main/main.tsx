@@ -74,6 +74,6 @@ const Main = () => {
       );
     });
   }
-  return <Switch>{content}</Switch>;
+  return <Switch> {content} </Switch>;
 };
 export default Main;

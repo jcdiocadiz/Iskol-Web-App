@@ -32,32 +32,30 @@ const App = () => {
   };
   return (
     <div>
-      <BrowserRouter>
-        <ThemeProvider
-          applyTo={"body"}
-          theme={theme ?? GetObjectFromLocalStorage(LocalStorageTheme)}
-        >
-          <Header
-            onThemeChange={onThemeChange}
-            onLogoClick={(headerName: string) => {
-              setHeaderName(headerName);
-            }}
-          />
-          <div className="row">
-            <div className="col-2 col-s-2 menu">
-              <Menu onMenuClick={onMenuClick} />
-            </div>
-            <div className={"col-8 col-s-7"}>
-              <PageHeader headerName={headerName} id={headerId}></PageHeader>
-              <Main />
-            </div>
-            <div className={"col-2 col-s-12"}>
-              <RightPanel />
-            </div>
+      <ThemeProvider
+        applyTo={"body"}
+        theme={theme ?? GetObjectFromLocalStorage(LocalStorageTheme)}
+      >
+        <Header
+          onThemeChange={onThemeChange}
+          onLogoClick={(headerName: string) => {
+            setHeaderName(headerName);
+          }}
+        />
+        <div className="row">
+          <div className="col-2 col-s-2 menu">
+            <Menu onMenuClick={onMenuClick} />
           </div>
-          <Footer />
-        </ThemeProvider>
-      </BrowserRouter>
+          <div className={"col-8 col-s-7"}>
+            <PageHeader headerName={headerName} id={headerId}></PageHeader>
+            <Main />
+          </div>
+          <div className={"col-2 col-s-12"}>
+            <RightPanel />
+          </div>
+        </div>
+        <Footer />
+      </ThemeProvider>
     </div>
   );
 };

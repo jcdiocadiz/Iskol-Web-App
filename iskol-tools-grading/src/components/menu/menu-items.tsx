@@ -10,7 +10,7 @@ export const navLinkGroups: INavLinkGroup[] = [
         key: "DashboardItem",
         name: "Dashboard",
         title: "Adviser - Dashboard",
-        url: "#/",
+        url: "#Dashboard",
       },
       {
         key: "SectionsItem",
